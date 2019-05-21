@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using Microsoft.EntityFrameworkCore;
+using DockerDemo.EmployeeDB;
+
 namespace DockerDemo
 {
     public class Startup
@@ -27,6 +30,8 @@ namespace DockerDemo
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddDbContext<EmployeeDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
