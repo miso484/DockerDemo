@@ -11,8 +11,7 @@ namespace DockerDemo.Mapping
             //Mapping domain class to resource class.
             CreateMap<Employee, EmployeeResource>();
             //Mapping API resource class to domain class. And the id property is ignored to mapping.
-            CreateMap<EmployeeResource, Employee>()
-                .ForMember(v => v.Id, opt => opt.Ignore());
+            CreateMap<EmployeeResource, Employee>().ForMember(v => v.Id, opt => opt.Ignore());
         }
     }
 }
