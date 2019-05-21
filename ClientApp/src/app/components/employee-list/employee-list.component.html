@@ -1,0 +1,30 @@
+<h2>Employee</h2>
+<hr>
+<p>
+  <a [routerLink]="['/employee/new']" class="btn btn-primary">New Employee</a>
+</p>
+<table class="table">
+    <thead>
+      <tr>
+          <th>Sr.</th>
+          <th>Name</th>
+          <th>Father Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <!-- *ngFor is used to display all the record from employees. -->
+        <tr *ngFor="let b of employees">
+            <td>{{ b.id }}</td>
+            <td>{{ b.name }}</td>
+            <td>{{ b.fatherName }}</td>
+            <td>{{ b.address }}</td>
+            <td>{{ b.city }}</td>
+            <td>
+              <a [routerLink]="['/employee/', b.id]">Edit</a>
+            </td>
+          </tr>
+    </tbody>
+</table>
