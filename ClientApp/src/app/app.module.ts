@@ -12,7 +12,7 @@ import { FetchDataComponent } from './components/fetch-data/fetch-data.component
 
 import { EmployeeComponent } from './components/employee/employee.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
-
+import { EmployeeService } from './services/employee.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
       { path: '**', redirectTo: 'home' }
     ])
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
