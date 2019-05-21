@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Microsoft.EntityFrameworkCore;
 using DockerDemo.EmployeeDB;
+using AutoMapper;
 
 namespace DockerDemo
 {
@@ -32,6 +33,8 @@ namespace DockerDemo
             });
 
             services.AddDbContext<EmployeeDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
